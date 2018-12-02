@@ -1,0 +1,77 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css"href="{% static 'CSS/estilo.css' %}">
+
+</head>
+<nav class="navbar justify-content-end navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="logo">
+            <img src="/static/img/logo.png" style="width: 200px; height: 40px; margin-top: .5em"></a>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" color = #080DB4 >
+            <ul class="nav navbar-nav ">
+                <li><a href="http://127.0.0.1:8000/registro/">Inscripción</a></li>
+                <li><a href="http://127.0.0.1:8000/registro/listar/">Inscritos</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<body>
+<div class="container">
+<div class="row" >
+  <div class="col-md-8" >
+      <h2 style="color:dodgerblue;" >Rescatamos mascotas para darles una nueva vida</h2>
+  </div>
+
+</div>
+
+</div>>
+
+<div class="container">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+
+<h1 style="color:dodgerblue;" align="center">PARA ADOPTAR INGRESA <a href="http://127.0.0.1:8000/registro/"><strong style="color:black:">AQUI</strong></a></h1>
+
+
+</body>
+
+
+
+
+<footer >
+    <div class="container">
+            <p style="color:white;">contactanos en +569 89562354</p>
+    </div>
+</footer>
+
+<div class="col-md-4">
+      <h4><u>Información de Conexión</u></h4>
+      <li type="square">Dirección ip :<strong>{{ip}}</strong></li>
+        <li type="square">Región       :<strong>{{region}}</strong></li>
+        <li type="square">Pais         :<strong>{{pais}}</strong></li>
+        <li type="square">Ubicación    :<strong>{{lat}};{{long}}</strong></li>
+  </div>
+
+
+</html>

@@ -1,0 +1,172 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css"href="{% static 'CSS/estilo.css' %}">
+
+</head>
+<nav class="navbar justify-content-end navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="logo">
+            <img src="/static/img/logo.png" style="width: 200px; height: 40px; margin-top: .5em"></a>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" color = #FFFF >
+            <ul class="nav navbar-nav ">
+                <li><a href="http://127.0.0.1:8000/registro/">Inscripción</a></li>
+                <li><a href="http://127.0.0.1:8000/registro/listar/">Inscritos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+<body>
+
+<div class="container">
+    <div class="row" >
+    <div class="col-md-8">
+    <h2>Inscripcion</h2>
+    <form action="/registro/crear" method="post">
+        {% csrf_token %}
+               <br>
+        <div class="form-group">
+            <label for="rut" class="col-sm-2 control-label">RUT</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" name="rut" id="rut" placeholder="" title="Rut Valido" pattern="{9}" required="required">
+                <br>
+            </div>
+        </div>
+        <br>
+        <br>
+            <div class="form-group">
+                <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" name="nombre" id="nombre" pattern="{3,30}" title="Ingresa tu nombre completo" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Correo</label>
+                <div class="col-sm-5">
+                    <input type="email" class="form-control" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Ingresa correo correcto" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Fijo / movil" title="Tu teléfono correcto" pattern="{9}" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+        <div class="form-group">
+            <label for="fecha" class="col-sm-2 control-label">Fecha de Nacimiento</label>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" name="fecha" id="fecha"  title="Fecha de Nacimiento" max="2000-01-01" required="required">
+            </div>
+            </div>
+            <br>
+            <br>
+        <div class="form-group">
+            <label for="region" class="col-sm-2 control-label">Region</label>
+            <div class="col-sm-5">
+                <input list="region" name="nom_reg" required="required">
+                  <datalist id="region">
+                    <option value="Region de Tarapaca">
+                    <option value="Region de Antofagasta">
+                    <option value="Region de Atacama">
+                    <option value="Region de Coquimbo">
+                    <option value="Region de Valparaiso">
+                    <option value="Region Metropolitana">
+                    <option value="Region del Libertador Gral.Bernardo O'higgins">
+                    <option value="Region del Maule">
+                    <option value="Region de la Araucania">
+                    <option value="Region de Los Lagos">
+                    <option value="Region de Aysen">
+                    <option value="Region de Magallanes">
+                    <option value="Region de Los Rios">
+                    <option value="Region de Arica y Parinacota">
+                    <option value="Region de Ñuble">
+                       </datalist>
+            </div>
+        </div>
+        <br>
+        <br>
+                <div class="form-group">
+            <label for="comuna" class="col-sm-2 control-label">Comuna</label>
+            <div class="col-sm-5">
+                <input list="comuna" name="nom_comuna" required="required">
+                  <datalist id="comuna">
+                      <option value="Arica">
+                      <option value="Iquique">
+                    <option value="Copiapo">
+                    <option value="Calama">
+                    <option value="La serena">
+                      <option value="Coquimbo">
+                      <option value="Valparaiso">
+                      <option value="Viña del Mar">
+                      <option value="Providencia">
+                      <option value="Santiago">
+                      <option value="Ñuñoa">
+                      <option value="Vitacura">
+                      <option value="Las Condes">
+                      <option value="Santiago">
+                      <option value="Curico">
+                      <option value="Concepcion">
+                      <option value="Temuco">
+                      <option value="Valdivia">
+                      <option value="Puerto montt">
+                      <option value="Coyhaique">
+                      <option value="Punta Arenas">
+                  </datalist>
+            </div>
+        </div>
+        <br>
+        <br>
+            <div class="form-group">
+            <label for="vivienda" class="col-sm-2 control-label">Tipo de Vivienda</label>
+            <div class="col-sm-5">
+                <input list="vivienda" name="tp-vivienda" required="required">
+                  <datalist id="vivienda">
+                    <option value="Departamento">
+                    <option value="Casa sin Patio">
+                    <option value="Casa con patio Pequeño">
+                      <option value="Casa con patio Grande">
+                  </datalist>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Enviar formulario</button>
+                <button type="button" class="btn btn-danger" onclick="window.location.href='//127.0.0.1:8000/'" >Cancelar</button>
+            </div>
+        </div>
+</form>
+    </div>
+
+    </div>
+</div>
+ </body>
+<br>
+<footer >
+    <div class="container">
+            <p style="color:white;">contactanos en +569 89562365</p>
+    </div>
+</footer>
+</body>
+</html>
